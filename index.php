@@ -1,11 +1,24 @@
 <?php
-  // ini_set('display_errors', 1);
-  //error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
   //turns on error reporting for mac
   require_once('admin/phpscripts/config.php');
-  $tbl = "tbl_movies";
-  $getMovies = getAll($tbl);
+  //filter corresponds with nav
+  if(isset($_GET['filter'])){
+    $tbl ="tbl_movies";
+		$tbl2 = "tbl_genre";
+		$tbl3 = "tbl_mov_genre";
+		$col = "movies_id";
+		$col2 = "genre_id";
+		$col3= "genre_name";
+    $filter = $_GET['filter'];
+    $getMovies = filterType($tbl, $tbl2, $tbl3, $col, $col2, $col3, $filter);
+  }else{
+    $tbl = "tbl_movies";
+    $getMovies = getAll($tbl);
+  }
  ?>
+
 <!doctype html>
 <html>
 <head>
@@ -41,13 +54,13 @@
     }else{
       echo "<p class=\"error\">{$getMovies}</p>";
     }
-
-    include('includes/footer.html');
    ?>
-
     </div>
-
   </div>
+
+  <?php
+      include('includes/footer.html');
+   ?>
 
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
