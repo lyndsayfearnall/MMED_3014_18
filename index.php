@@ -3,9 +3,23 @@
   //error_reporting(E_ALL);
   //turns on error reporting for mac
   require_once('admin/phpscripts/config.php');
-  $tbl = "tbl_movies";
-  $getMovies = getAll($tbl);
+  //filter corresponds with nav
+  if(isset($_GET['filter'])){
+    $tbl ="tbl_movies";
+		$tbl2 = "tbl_genre";
+		$tbl3 = "tbl_mov_genre";
+		$col = "movies_id";
+		$col2 = "genre_id";
+		$col3= "genre_name";
+    $filter = $_GET['filter'];
+    $getMovies = filterType($tbl, $tbl2, $tbl3, $col, $col2, $col3, $filter);
+  }else{
+    $tbl = "tbl_movies";
+    $getMovies = getAll($tbl);
+  }
+
  ?>
+
 <!doctype html>
 <html>
 <head>
