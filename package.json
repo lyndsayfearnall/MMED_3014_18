@@ -1,0 +1,24 @@
+{
+  "name": "mmed_3014_18",
+  "version": "1.0.0",
+  "description": "\"In-class php example\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyndsayfearnall/MMED_3014_18.git"
+  },
+  "author": "Me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyndsayfearnall/MMED_3014_18/issues"
+  },
+  "homepage": "https://github.com/lyndsayfearnall/MMED_3014_18#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

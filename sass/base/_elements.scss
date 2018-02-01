@@ -1,0 +1,25 @@
+body{
+  background-color: white;
+  font-family: $robot;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $qs;
+  //color: white;
+}
+
+.hidden{
+  display: none;
+}
+
+a{
+  color: white;
+  &:hover{
+    color: grey;
+  }
+}
+
+.test{
+  border: 2px solid red;
+}
