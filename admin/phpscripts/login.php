@@ -55,7 +55,7 @@
             //lockout user after third failed attempt, redirect
             redirect_to("admin_login_failed.php");
           }
-          //this doesn't actually accomplish what it's supposed to—you can keep trying to login, you just get redirected to the admin_login_failed page....
+          //this doesn't actually accomplish what it's supposed to — you can keep trying to login, you just get redirected to the admin_login_failed page....
 
         }else{
           $message = "Username and/ or password is incorrect. <br>Please make sure your caps lock key is turned off.";
