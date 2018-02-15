@@ -1,16 +1,17 @@
 <?php
-  //ini_set('display_errors', 1);
-  //error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  error_reporting(E_ALL);
 
   require_once('phpscripts/config.php');
 
   $ip = $_SERVER['REMOTE_ADDR']; //access ip address so that you can run checks against it. Always check the ip address and store in database just in case
-  //echo $ip;
+  $timestamp = date('Y-m-d G:i:s');
+
   if(isset($_POST['submit'])){ //check to see if the form has been submitted
     $username = trim($_POST['username']); //trim() checks for white space before and after characters and removes it
     $password = trim($_POST['password']);
     if($username !== "" && $password !== ""){ //make sure it is NOT identitcal to an empty string, adds security. BOTH can't be empty
-      $result = logIn($username, $password, $ip);
+      $result = logIn($username, $password, $ip, $timestamp);
       $message = $result;
     }else{
       $message = "Please fill in the required fields";
@@ -25,7 +26,7 @@
     <title>CMS Portal Login</title>
   </head>
   <body>
-    <h1>Welcome Company Name</h1>
+    <h1>Welcome!</h1>
     <?php if(!empty($message)){echo $message;} ?>
       <form action="admin_login.php" method="post">
         <label>Username:</label>
