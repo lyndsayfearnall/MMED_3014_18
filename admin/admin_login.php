@@ -25,25 +25,40 @@
     <meta charset="utf-8">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" href="public/css/main.css">
+      <link rel="stylesheet" href="../public/css/main.css">
     <title>CMS Portal Login</title>
   </head>
-  <body>
+  <body class="admin_login">
     <div class="container">
       <div class="row">
-        <h1 class= "col-sm-12">Welcome to the Admin Login Page!</h1>
-        <div><?php if(!empty($message)){echo $message;} ?></div>
-        <br>
-          <form class = "col-sm-10 form-group" action="admin_login.php" method="post" id="loginForm">
-            <label>Username:</label>
-            <input type="text" name="username" value="" class="form-control">
+        <div class= "col-sm-5 loginForm">
+          <h1 class= "text-center"> Welcome to the Admin Login Page!</h1>
+          <p class="text-center">Enter your username <span class="font-weight-bold">(testUser)</span> and password <span class="font-weight-bold">(test)</span> to login</p>
+          <div><?php if(!empty($message)){echo $message;} ?></div>
+          <br>
+
+          <form action="admin_login.php" method="post">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="material-icons">perm_identity</i></span>
+              </div>
+                <input type="text" name="username" value="" class="form-control col-sm-8" placeholder="Username">
+            </div>
             <br>
-            <label>Password:</label>
-            <input type="text" name="password" value="" class="form-control">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="material-icons">lock_outline</i></span>
+              </div>
+                <input type="password" name="password" value="" class="form-control" placeholder="Password">
+            </div>
             <br>
-            <button class="btn btn-primary" type="submit" name="submit" value="Show me the money" id="login">Let Me In!</button>
+
+            <input class="form-control" type="submit" name="submit" value="Let Me In!" id="login"></input>
           </form>
         </div>
+      </div>
+
     </div>
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

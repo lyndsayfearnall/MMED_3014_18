@@ -30,7 +30,7 @@
 </head>
 <body>
   <?php
-    include('includes/nav.html');
+    include('includes/nav.php');
    ?>
 
   <div class="container">
@@ -45,7 +45,7 @@
               <img src=\"images/{$row['movies_cover']}\" alt=\"{$row['movies_title']}\" width=\"80%\">
                 <h2>{$row['movies_title']}</h2>
                 <p>{$row['movies_year']}</p>
-                <a href=\"details.php?id={$row['movies_id']}\" id=\"detailsBut\">More Details...</a>
+                <a href=\"details.php?id={$row['movies_id']}\" id=\"detailsBut\" class=\"btn\">More Details...</a>
                 <br><br>
             </div>
 
@@ -59,7 +59,7 @@
   </div>
 
   <?php
-      include('includes/footer.html');
+      include('includes/footer.php');
    ?>
 
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
